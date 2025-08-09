@@ -38,3 +38,9 @@ A modular template for creating Python Dash dashboards across different domains.
 For production deployment, use Gunicorn:
 ```bash
 gunicorn src.app:app.server
+
+# Dash Dashboard Template
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A modular template for creating Python Dash dashboards across different domains.
