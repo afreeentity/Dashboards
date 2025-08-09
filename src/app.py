@@ -1,8 +1,16 @@
+import sys
+import os
+from pathlib import Path
+
+# Add the parent directory to Python path so we can import from config
+parent_dir = Path(__file__).parent.parent
+sys.path.insert(0, str(parent_dir))
+
 import dash
 from dash import dcc, html
 from config.settings import get_config
-from layouts.base_layout import create_base_layout
-from callbacks.base_callbacks import register_base_callbacks
+from src.layouts.base_layout import create_base_layout
+from src.callbacks.base_callbacks import register_base_callbacks
 
 def create_app(config=None):
     """Factory function to create Dash app"""
@@ -29,7 +37,7 @@ def create_app(config=None):
 
 if __name__ == "__main__":
     app, config = create_app()
-    app.run_server(
+    app.run(
         debug=config.debug,
         host=config.host,
         port=config.port
